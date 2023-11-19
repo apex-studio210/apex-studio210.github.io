@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Page</title>
+  <link rel="icon" type="image/png" href="https://apexstudio.static.domains/logorounded.png"> <!-- Replace "favicon.png" with the actual path to your favicon image -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #FDFBEF; /* Very light warm background color */
+      font-family: 'Inter', sans-serif;
+    }
+
+    .payment-box {
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #ddd; /* Light gray stroke */
+      background-color: #fff; /* White background inside the box */
+      max-width: 400px;
+      width: 90%;
+			border-radius: 10px;
+      box-sizing: border-box;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-weight: 700; /* Apply bold style to the heading */
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #4caf50; /* Green color for buttons */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049; /* Darker green on hover */
+    }
+
+	.confirmation-box {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #4caf50; /* Green stroke */
+      background-color: #e5f4e2; /* Light green background inside the box */
+      border-radius: 5px;
+			color: #4caf50;
+    }
+    selected-plan-box {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #4caf50;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+
+    @media (max-width: 600px) {
+      /* Adjust styles for smaller screens */
+      .payment-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="payment-box">
+    <img src="https://apexstudio.static.domains/Instagram%20post%20-%20505.png" alt="Sample Logo" width="90">
+    <div class="selected-plan-box">
+      You have selected the Essential Plan
+    </div>
+    <h2>Choose Your Payment Method</h2>
+<div id="paypal-button-container-P-5MM63794E7111102JMVKRWZI"></div>
+<script src="https://www.paypal.com/sdk/js?client-id=AQoB6aRA7HBM7kEWJu5FnvtuRYLX3qGlc9G1FtPXsIUBVnNNmRKUwzIjO6cyT51_JZYyOsvSrXM0DyuD&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<div id="paypal-button-container-P-9H427168H0206391VMVNCCFQ"></div>
+<script src="https://www.paypal.com/sdk/js?client-id=AQoB6aRA7HBM7kEWJu5FnvtuRYLX3qGlc9G1FtPXsIUBVnNNmRKUwzIjO6cyT51_JZYyOsvSrXM0DyuD&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'subscribe'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-9H427168H0206391VMVNCCFQ'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+      }
+  }).render('#paypal-button-container-P-9H427168H0206391VMVNCCFQ'); // Renders the PayPal button
+</script>
+    <!--<button>Pay with Option 1</button>
+    <button>Pay with Option 2</button>-->
+<div class="confirmation-box">
+      Please check your email after payment
+    </div>
+  </div>
+</body>
+</html>
