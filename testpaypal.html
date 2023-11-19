@@ -89,10 +89,8 @@
       You have selected the Essential Plan
     </div>
     <h2>Choose Your Payment Method</h2>
-<div id="paypal-button-container-P-5MM63794E7111102JMVKRWZI"></div>
-<script src="https://www.paypal.com/sdk/js?client-id=AQoB6aRA7HBM7kEWJu5FnvtuRYLX3qGlc9G1FtPXsIUBVnNNmRKUwzIjO6cyT51_JZYyOsvSrXM0DyuD&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-<div id="paypal-button-container-P-9H427168H0206391VMVNCCFQ"></div>
-<script src="https://www.paypal.com/sdk/js?client-id=AQoB6aRA7HBM7kEWJu5FnvtuRYLX3qGlc9G1FtPXsIUBVnNNmRKUwzIjO6cyT51_JZYyOsvSrXM0DyuD&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<div id="paypal-button-container-P-6TF461573S8638405MVNCOSI"></div>
+<script src="https://www.paypal.com/sdk/js?client-id=AfqFpmR794SOhTERMy9WF4-WXZgva9tivHtluflPaR3K_D0cHGuzKZnZdNIjAqw_hCrtq11ttVbGXB12&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
 <script>
   paypal.Buttons({
       style: {
@@ -104,13 +102,13 @@
       createSubscription: function(data, actions) {
         return actions.subscription.create({
           /* Creates the subscription */
-          plan_id: 'P-9H427168H0206391VMVNCCFQ'
+          plan_id: 'P-6TF461573S8638405MVNCOSI'
         });
       },
       onApprove: function(data, actions) {
         alert(data.subscriptionID); // You can add optional success message for the subscriber here
       }
-  }).render('#paypal-button-container-P-9H427168H0206391VMVNCCFQ'); // Renders the PayPal button
+  }).render('#paypal-button-container-P-6TF461573S8638405MVNCOSI'); // Renders the PayPal button
 </script>
     <!--<button>Pay with Option 1</button>
     <button>Pay with Option 2</button>-->
